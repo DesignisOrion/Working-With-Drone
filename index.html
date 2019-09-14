@@ -12,12 +12,13 @@
   	<a-marker preset="hiro">
     
     <!--Aframe Object-->
-      <a-assets>
-          <a-asset-item id="drone" src="scene.gltf" scale="0.01 0.01 0.01"></a-asset-item>
-      </a-assets>
-      </a-entity>
-  	</a-marker>
-  	<a-entity camera></a-entity>
+      <a-scene>
+  <a-assets>
+    <a-asset-item id="drone" src="scene.gltf"></a-asset-item>
+  </a-assets>
+
+  <a-entity gltf-model="#drone"></a-entity>
+</a-scene>
     </a-scene>
   </body>
 </html>

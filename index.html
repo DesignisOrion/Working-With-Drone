@@ -6,19 +6,17 @@
 <!-- include ar.js for A-Frame -->
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
   <body style='margin : 0px; overflow: hidden;'>
-    <!--initialize ar.js-->
-    <a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: false'>
-    <!--ARjs Marker-->
-  	<a-marker preset="hiro">
-    
-    <!--Aframe Object-->
-      <a-scene>
-  <a-assets>
-    <a-asset-item id="drone" src="scene.gltf"></a-asset-item>
-  </a-assets>
+     <a-scene embedded arjs='sourceType: webcam;'>
+ 
+    <a-marker preset='hiro'>
+      <!--Adding a glTF 2.0 model to your scene-->
+      <a-entity
+      gltf-model-next="src: url(scene.gltf);">
+      </a-entity>
+      
+    </a-marker>
 
-  <a-entity gltf-model="#drone"></a-entity>
-</a-scene>
-    </a-scene>
+    <a-entity camera></a-entity>
+  </a-scene>
   </body>
 </html>
